@@ -34,6 +34,7 @@ pub fn greet() {
         return;
     };
 
+    std::fs::create_dir_all(path.parent().unwrap()).ok();
     std::fs::write(&path, version).ok();
     print_and_exit(GREETING);
 }
